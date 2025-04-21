@@ -20,7 +20,7 @@ const projectShowcases = [
   {
     name: "File Integrity Checker",
     description:
-      "A tool for monitoring and verifying file integrity to detect unauthorized modifications or corruptions.",
+      "File Integrity Checker A simple yet powerful Python CLI tool that detects if files in a directory have been modified, deleted, or added by comparing current file hashes with previously saved ones. Ideal for monitoring system configurations, scripts, and sensitive files.",
     images: ["/placeholder.svg?height=600&width=800", "/placeholder.svg?height=600&width=800"],
     technologies: ["Python", "Cryptography", "Hash Functions", "System Monitoring"],
     features: [
@@ -29,11 +29,14 @@ const projectShowcases = [
       "Tamper detection alerts",
       "Detailed change logging",
     ],
+    video: true,
+    videoUrl: "https://drive.google.com/file/d/1og4As4A-jdgLMGWDbzShH-qtCGiiHJHG/preview",
+    githubUrl: "https://github.com/yugsss/File-Integrity-Checker",
   },
   {
     name: "Nmap-Assistant",
     description:
-      "An interactive assistant for Nmap scanning that simplifies network reconnaissance and vulnerability assessment.",
+      "A powerful and user-friendly desktop application that combines custom port scanning and advanced Nmap scanning in one place. Perfect for cybersecurity students, enthusiasts, or professionals who want a fast, accessible interface for running network scans.",
     images: ["/placeholder.svg?height=600&width=800", "/placeholder.svg?height=600&width=800"],
     technologies: ["Python", "Nmap", "Network Security", "CLI"],
     features: [
@@ -42,6 +45,9 @@ const projectShowcases = [
       "Vulnerability correlation",
       "Reporting and visualization",
     ],
+    video: true,
+    videoUrl: "https://drive.google.com/file/d/1og4As4A-jdgLMGWDbzShH-qtCGiiHJHG/preview",
+    githubUrl: "https://github.com/yugsss/nmap-assistant",
   },
   {
     name: "Digital Library Layout",
@@ -54,6 +60,9 @@ const projectShowcases = [
       "User authentication system",
       "Resource management interface",
     ],
+    video: true,
+    videoUrl: "https://drive.google.com/file/d/1og4As4A-jdgLMGWDbzShH-qtCGiiHJHG/preview",
+    githubUrl: "https://github.com/yugsss/Digital-Library-Layout",
   },
 ]
 
@@ -179,11 +188,11 @@ export default function Projects() {
             transition={{ duration: 0.7, type: "spring" }}
             viewport={{ once: false }}
           >
-            <motion.span className="relative z-10 bg-gradient-to-r from-green-500 via-blue-500 to-purple-500 text-transparent bg-clip-text">
+            <motion.span className="relative z-10 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 text-transparent bg-clip-text">
               Featured Projects
             </motion.span>
             <motion.span
-              className="absolute -bottom-2 left-0 right-0 h-1 bg-gradient-to-r from-green-500 via-blue-500 to-purple-500 rounded-full"
+              className="absolute -bottom-2 left-0 right-0 h-1 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 rounded-full"
               initial={{ width: 0, left: "50%" }}
               whileInView={{ width: "100%", left: 0 }}
               transition={{ duration: 0.8, delay: 0.3 }}
@@ -204,38 +213,65 @@ export default function Projects() {
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.5 }}
                 key={`${activeProject}-${activeImage}`}
+                onClick={projectShowcases[activeProject].video ? () => openProjectModal(activeProject) : undefined}
               >
                 <div className="absolute inset-0 flex items-center justify-center">
                   <AnimatePresence mode="wait">
-                    <motion.img
-                      key={`${activeProject}-${activeImage}`}
-                      src={projectShowcases[activeProject].images[activeImage]}
-                      alt={`${projectShowcases[activeProject].name} screenshot`}
-                      className="w-full h-full object-cover"
-                      initial={{ opacity: 0, scale: 1.1 }}
-                      animate={{ opacity: 1, scale: 1 }}
-                      exit={{ opacity: 0, scale: 0.9 }}
-                      transition={{ duration: 0.5 }}
-                    />
+                    {projectShowcases[activeProject].video ? (
+                      <motion.div
+                        key={`video-${activeProject}`}
+                        className="w-full h-full"
+                        initial={{ opacity: 0, scale: 1.1 }}
+                        animate={{ opacity: 1, scale: 1 }}
+                        exit={{ opacity: 0, scale: 0.9 }}
+                        transition={{ duration: 0.5 }}
+                      >
+                        <iframe
+                          src={projectShowcases[activeProject].videoUrl}
+                          className="w-full h-full"
+                          allow="autoplay; encrypted-media"
+                          allowFullScreen
+                          frameBorder="0"
+                        ></iframe>
+                      </motion.div>
+                    ) : (
+                      <motion.img
+                        key={`${activeProject}-${activeImage}`}
+                        src={projectShowcases[activeProject].images[activeImage]}
+                        alt={`${projectShowcases[activeProject].name} screenshot`}
+                        className="w-full h-full object-cover"
+                        initial={{ opacity: 0, scale: 1.1 }}
+                        animate={{ opacity: 1, scale: 1 }}
+                        exit={{ opacity: 0, scale: 0.9 }}
+                        transition={{ duration: 0.5 }}
+                      />
+                    )}
                   </AnimatePresence>
                 </div>
 
-                <div className="absolute bottom-0 left-0 right-0 flex justify-center p-2 gap-2">
-                  {projectShowcases[activeProject].images.map((_, idx) => (
-                    <button
-                      key={idx}
-                      onClick={() => setActiveImage(idx)}
-                      className={`w-2 h-2 rounded-full transition-all ${
-                        idx === activeImage ? "bg-white scale-125" : "bg-white/30"
-                      }`}
-                      aria-label={`View image ${idx + 1}`}
-                    />
-                  ))}
-                </div>
+                {/* Only show image navigation dots for non-video projects */}
+                {!projectShowcases[activeProject].video && (
+                  <div className="absolute bottom-0 left-0 right-0 flex justify-center p-2 gap-2">
+                    {projectShowcases[activeProject].images.map((_, idx) => (
+                      <button
+                        key={idx}
+                        onClick={() => setActiveImage(idx)}
+                        className={`w-2 h-2 rounded-full transition-all ${
+                          idx === activeImage ? "bg-white scale-125" : "bg-white/30"
+                        }`}
+                        aria-label={`View image ${idx + 1}`}
+                      />
+                    ))}
+                  </div>
+                )}
 
                 <div
-                  className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent cursor-pointer"
-                  onClick={() => openProjectModal(activeProject)}
+                  className={`absolute inset-0 ${
+                    projectShowcases[activeProject].video
+                      ? "pointer-events-none bg-gradient-to-t from-black/80 via-transparent to-transparent"
+                      : "bg-gradient-to-t from-black/80 via-transparent to-transparent cursor-pointer"
+                  }`}
+                  onClick={projectShowcases[activeProject].video ? undefined : () => openProjectModal(activeProject)}
                 >
                   <div className="absolute bottom-4 left-4 right-4 flex justify-between items-center">
                     <span className="text-xs text-white/70 bg-black/50 px-2 py-1 rounded">Click to view details</span>
@@ -340,9 +376,11 @@ export default function Projects() {
                   >
                     View Details
                   </Button>
-                  <Button variant="outline">
-                    <Github className="h-4 w-4 mr-2" /> GitHub
-                  </Button>
+                  <a href={projectShowcases[activeProject].githubUrl} target="_blank" rel="noopener noreferrer">
+                    <Button variant="outline">
+                      <Github className="h-4 w-4 mr-2" /> GitHub
+                    </Button>
+                  </a>
                 </motion.div>
               </motion.div>
             </div>
@@ -491,38 +529,53 @@ export default function Projects() {
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
                   <div>
                     <div className="relative aspect-video overflow-hidden rounded-lg bg-black/50 mb-4">
-                      <img
-                        src={projectShowcases[modalProject].images[activeImage] || "/placeholder.svg"}
-                        alt={`${projectShowcases[modalProject].name} screenshot`}
-                        className="w-full h-full object-cover"
-                      />
+                      {projectShowcases[modalProject].video ? (
+                        <iframe
+                          src={projectShowcases[modalProject].videoUrl}
+                          className="w-full h-full"
+                          allow="autoplay; encrypted-media"
+                          allowFullScreen
+                          frameBorder="0"
+                        ></iframe>
+                      ) : (
+                        <img
+                          src={projectShowcases[modalProject].images[activeImage] || "/placeholder.svg"}
+                          alt={`${projectShowcases[modalProject].name} screenshot`}
+                          className="w-full h-full object-cover"
+                        />
+                      )}
                     </div>
 
-                    <div className="flex gap-2 mb-6">
-                      {projectShowcases[modalProject].images.map((_, idx) => (
-                        <button
-                          key={idx}
-                          onClick={() => setActiveImage(idx)}
-                          className={`w-16 h-24 rounded overflow-hidden border-2 transition-all ${
-                            idx === activeImage ? "border-white" : "border-transparent"
-                          }`}
-                        >
-                          <img
-                            src={projectShowcases[modalProject].images[idx] || "/placeholder.svg"}
-                            alt={`Thumbnail ${idx + 1}`}
-                            className="w-full h-full object-cover"
-                          />
-                        </button>
-                      ))}
-                    </div>
+                    {/* Only show image thumbnails for non-video projects */}
+                    {!projectShowcases[modalProject].video && (
+                      <div className="flex gap-2 mb-6">
+                        {projectShowcases[modalProject].images.map((_, idx) => (
+                          <button
+                            key={idx}
+                            onClick={() => setActiveImage(idx)}
+                            className={`w-16 h-24 rounded overflow-hidden border-2 transition-all ${
+                              idx === activeImage ? "border-white" : "border-transparent"
+                            }`}
+                          >
+                            <img
+                              src={projectShowcases[modalProject].images[idx] || "/placeholder.svg"}
+                              alt={`Thumbnail ${idx + 1}`}
+                              className="w-full h-full object-cover"
+                            />
+                          </button>
+                        ))}
+                      </div>
+                    )}
 
                     <div className="flex gap-4">
                       <Button className="bg-white text-black hover:bg-white/90">
                         <Monitor className="h-4 w-4 mr-2" /> Live Demo
                       </Button>
-                      <Button variant="outline">
-                        <Github className="h-4 w-4 mr-2" /> View Code
-                      </Button>
+                      <a href={projectShowcases[modalProject].githubUrl} target="_blank" rel="noopener noreferrer">
+                        <Button variant="outline">
+                          <Github className="h-4 w-4 mr-2" /> View Code
+                        </Button>
+                      </a>
                     </div>
                   </div>
 

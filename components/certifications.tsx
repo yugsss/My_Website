@@ -34,8 +34,7 @@ const certifications = [
 const achievements = [
   {
     title: "Graduating Class Rank 🎓",
-    description:
-      "Ranked in Top 5 of BSc IT graduating class, Jai Hind College with a GPA of 9.8/10 ",
+    description: "Ranked in Top 5 of BSc IT graduating class, Jai Hind College with a GPA of 9.8/10 ",
     year: "2022",
   },
   {
@@ -45,7 +44,8 @@ const achievements = [
   },
   {
     title: "National Level Sprinter 🏃‍♂️",
-    description: "Represented Maharashtra in National Track Events (200m & 400m) & successfully completed 30+ marathon finisher for charity purpose",
+    description:
+      "Represented Maharashtra in National Track Events (200m & 400m) & successfully completed 30+ marathon finisher for charity purpose",
     year: "2020",
   },
 ]

@@ -104,7 +104,7 @@ export default function Contact() {
               </a>
 
               <a
-                href="https://app.hackthebox.com/profile/yugamchheda"
+                href="https://app.hackthebox.com/ychheda"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-4 text-white/80 hover:text-white transition-colors group"
@@ -115,11 +115,14 @@ export default function Contact() {
                 <span>Check my profile on Hack the Box</span>
               </a>
 
-              <a href="#" className="flex items-center gap-4 text-white/80 hover:text-white transition-colors group">
+              <a
+                href="https://www.instagram.com/chhedayugam/"
+                className="flex items-center gap-4 text-white/80 hover:text-white transition-colors group"
+              >
                 <div className="w-10 h-10 rounded-full bg-[rgba(255,255,255,0.1)] flex items-center justify-center group-hover:bg-[rgba(255,255,255,0.2)] transition-colors">
                   <Twitter className="h-5 w-5" />
                 </div>
-                <span>Follow me on Twitter</span>
+                <span>Follow me on Instagram </span>
               </a>
 
               <a
@@ -181,10 +184,6 @@ export default function Contact() {
                 </div>
               )}
             </form>
-
-            <div className="vertical-text text-6xl font-bold text-white/10 absolute -right-10 top-1/2 -translate-y-1/2">
-              CONTACT
-            </div>
           </motion.div>
         </motion.div>
       </div>
