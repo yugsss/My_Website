@@ -26,28 +26,30 @@ export default function About() {
     operatingSystems: [
       { name: "Windows", proficiency: 90 },
       { name: "Kali Linux", proficiency: 85 },
-      { name: "Parrot", proficiency: 80 },
+      { name: "AWS EC2", proficiency: 88 },
       { name: "Mac OS", proficiency: 75 },
     ],
-    databases: [
-      { name: "MySQL", proficiency: 85 },
-      { name: "PostgreSQL", proficiency: 80 },
-      { name: "Oracle", proficiency: 75 },
-      { name: "MS SQL", proficiency: 70 },
+    cloudSecurity: [
+      { name: "AWS GuardDuty", proficiency: 92 },
+      { name: "AWS Config", proficiency: 85 },
+      { name: "AWS S3", proficiency: 88 },
+      { name: "CloudTrail", proficiency: 82 },
+      { name: "IAM", proficiency: 90 },
+      { name: "AWS AI", proficiency: 78 },
     ],
     securityTools: [
+      { name: "Splunk SIEM", proficiency: 95 },
+      { name: "CrowdStrike", proficiency: 90 },
+      { name: "Tenable.io", proficiency: 88 },
+      { name: "CyberArk", proficiency: 85 },
+      { name: "Palo Alto", proficiency: 82 },
+      { name: "Okta", proficiency: 80 },
       { name: "Nmap", proficiency: 95 },
-      { name: "Metasploit", proficiency: 90 },
-      { name: "Wireshark", proficiency: 85 },
-      { name: "Burp Suite", proficiency: 90 },
-      { name: "Netcat", proficiency: 80 },
-      { name: "Nikto", proficiency: 84 },
-      { name: "Kismet", proficiency: 70 },
-      { name: "Splunk", proficiency: 85 },
-      { name: "Acunetix", proficiency: 80 },
-      { name: "John the Ripper", proficiency: 85 },
-      { name: "SQLmap", proficiency: 80 },
-      { name: "Hydra", proficiency: 75 },
+      { name: "Netcat", proficiency: 85 },
+      { name: "Hping", proficiency: 80 },
+      { name: "Snort IDS", proficiency: 85 },
+      { name: "Jira", proficiency: 88 },
+      { name: "Python", proficiency: 85 },
     ],
   }
 
@@ -653,11 +655,11 @@ export default function About() {
                                 ))}
                               </div>
 
-                              <h4 className="font-semibold mb-4 mt-8 text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-teal-400">
-                                Databases
+                              <h4 className="font-semibold mb-4 mt-8 text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-400">
+                                Cloud Security
                               </h4>
                               <div className="space-y-4">
-                                {skills.databases.map((skill, i) => (
+                                {skills.cloudSecurity.map((skill, i) => (
                                   <motion.div
                                     key={i}
                                     className="space-y-1"
@@ -688,7 +690,7 @@ export default function About() {
                               transition={{ duration: 0.5, delay: 0.2 }}
                             >
                               <h4 className="font-semibold mb-4 text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400">
-                                Security Tools
+                                Security Tools & Technologies
                               </h4>
                               <div className="grid grid-cols-2 gap-3">
                                 {skills.securityTools.map((skill, i) => (
@@ -731,12 +733,12 @@ export default function About() {
                                 }}
                               >
                                 <h4 className="font-semibold mb-2 text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-teal-400">
-                                  Continuous Skill Development
+                                  Compliance & Risk Management
                                 </h4>
                                 <p className="text-white/80">
-                                  I regularly participate in CTF competitions, bug bounty programs, and hands-on labs to
-                                  sharpen my technical skills. This practical experience complements my theoretical
-                                  knowledge and keeps me updated with the latest attack vectors and defense mechanisms.
+                                  Experienced with GDPR, ISO 27001, NIST, SOX, and PCI-DSS frameworks. Skilled in risk
+                                  assessment, vulnerability management, and compliance audits to maintain robust
+                                  security posture and regulatory adherence.
                                 </p>
                               </motion.div>
                             </motion.div>

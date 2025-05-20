@@ -3,34 +3,42 @@
 import { motion } from "framer-motion"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 
+// Update the workExperience array with the new job details
 const workExperience = [
   {
-    title: "Graduate Teaching Assistant Fellowship",
-    company: "CI Compass Cyberinfrastructure",
-    period: "Feb 2024 – Jul 2024",
+    title: "Cyber Security Analyst",
+    company: "M&T Bank, USA",
+    period: "Aug 2024 – Present",
     description: [
-      "Developed and established four innovative solutions for NSF-funded research projects, directly contributing findings that addressed the three most critical challenges in cyberinfrastructure efficiency during the fellowship period.",
-      "Led a class of nearly 25 students, providing personalized mentorship and feedback on assignments, resulting in a 20% improvement in students' practical skills and project outcomes.",
+      "Engineered and implemented AES-256 encryption for securing sensitive customer data stored in AWS S3 and internal databases, ensuring both at-rest and in-transit encryption compliance.",
+      "Deployed and configured Splunk SIEM across AWS EC2 environments, enabling real-time threat detection and reducing response time to security incidents by 40%.",
+      "Integrated Okta for identity and access management; enforced MFA and role-based access to enhance authentication security across financial systems.",
+      "Developed AI-driven anomaly detection models using Amazon Lookout for Metrics, enabling classification and prioritization of threats based on behavioral patterns.",
+      "Strengthened network defense by deploying Palo Alto Firewalls and Snort IDS, identifying and mitigating port scanning and unauthorized access attempts.",
     ],
   },
   {
-    title: "Software Analyst (Database Security)",
-    company: "Capgemini Technology Service Limited",
+    title: "SOC Analyst",
+    company: "Hellinex Cloud, India",
     period: "Jul 2022 – Jul 2023",
     description: [
-      "Evaluated and installed database management systems for 8 different clients.",
-      "Managed standard DBA tasks, including securing databases, managing space, monitoring performance, installing critical patches resulting in a 80% uptime rate also maintained documentation for over 70 new or amended procedures.",
-      "Configured parameter group and supervised IP traffic using a security group, ensuring secure access to the database; significantly mitigated potential security threats and unauthorized access.",
+      "Monitored cloud infrastructure using AWS GuardDuty to detect unauthorized API calls, abnormal network traffic, and potential security threats, reducing response times by 30%.",
+      "Configured and optimized Splunk SIEM to aggregate security logs, setting up automated alerts for anomalies and potential data breaches, enhancing real-time threat detection.",
+      "Deployed and managed CrowdStrike for endpoint protection, ensuring real-time malware and ransomware detection, and preventing the spread of cyber threats across the cloud network.",
+      "Implemented AWS Config for continuous monitoring and assessment of cloud resources to ensure compliance with industry standards such as GDPR and ISO 27001, reducing audit workload by 50%.",
+      "Led the configuration of Tenable.io to perform vulnerability scanning on cloud services like EC2 instances and storage buckets, identifying and mitigating risks to maintain a secure environment.",
     ],
   },
   {
-    title: "Cyber Security Intern",
-    company: "GajShield Infotech Pvt Ltd",
-    period: "May 2021 – Jun 2022",
+    title: "Cyber Security Analyst",
+    company: "GajShield Infotech Pvt Ltd, India",
+    period: "Feb 2021 – Jun 2022",
     description: [
-      "Analyzed vulnerability assessments of applications and penetration tests and launched exploits using various open source and commercial tools such as Nmap, Netcat, and Hping.",
-      "Established firewall rules, scrutinized and validated all ports for robust security, and subjected firewalls to rigorous Denial of Service (DoS) tests, yielding a 40% efficacy rate in mitigating attacks.",
-      "Executed comprehensive monitoring and management of perimeter security systems for a network exceeding 20 servers, ensuring seamless functionality of firewalls and IDM to enhance overall security posture using Splunk (SPL).",
+      "Conducted vulnerability assessments and penetration testing on over 50+ enterprise applications using tools like Nmap, Netcat, and Hping, identifying critical security gaps and helping mitigate risks across the infrastructure.",
+      "Developed and enforced firewall rules by monitoring, validating, and restricting port access; performed Denial-of-Service (DoS) simulations to test robustness and enhance firewall effectiveness by 40%.",
+      "Managed and monitored perimeter security systems and firewalls across 20+ servers, ensuring uninterrupted network protection and implementing continuous IDM (Intrusion Detection & Monitoring) protocols using Splunk (SPL).",
+      "Identified and remediated scripting vulnerabilities, ensuring firewall systems safeguarded internal assets against exploitative threats through regular patching and real-time threat analysis.",
+      "Assisted in implementation and support of CyberArk Privileged Access Management (PAM) solutions including Vault, PSM, CPM, and PTA, helping secure elevated credentials and reduce insider threat risk.",
     ],
   },
 ]
