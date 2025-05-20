@@ -341,7 +341,7 @@ export default function About() {
 
             {/* Resume download button */}
             <motion.a
-              href="https://drive.google.com/uc?export=download&id=1Q1U8rH6MjR2pA7qgxNB5nG_RAoE1M2e8" // ← ✅ UPDATED
+              href="https://drive.google.com/uc?export=download&id=1i57v0aQqh_qD730YwISPU3m_GmGxXLww" // ← ✅ UPDATED
               target="_blank"
               rel="noopener noreferrer"
               className="mt-6 w-full py-3 px-4 bg-gradient-to-r from-pink-500 to-purple-500 text-white rounded-lg flex items-center justify-center gap-2 group"
