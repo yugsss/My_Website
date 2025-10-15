@@ -7,7 +7,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 const workExperience = [
   {
     title: "Cyber Security Analyst",
-    company: "M&T Bank, USA",
+    company: "Fifth Third Bank, USA",
     period: "Aug 2024 – Present",
     description: [
       "Engineered and implemented AES-256 encryption for securing sensitive customer data stored in AWS S3 and internal databases, ensuring both at-rest and in-transit encryption compliance.",
