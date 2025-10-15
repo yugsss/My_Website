@@ -203,7 +203,7 @@ export default function Hero() {
           </Link>
 
           <a
-            href="https://drive.google.com/uc?export=download&id=1i57v0aQqh_qD730YwISPU3m_GmGxXLww"
+            href="https://drive.google.com/uc?export=download&id=1F8iSrn0uW44JuA3TT6I4tWcaB4rmaXXT"
             target="_blank"
             rel="noopener noreferrer"
             className="px-6 py-3 bg-[rgba(255,255,255,0.1)] hover:bg-[rgba(255,255,255,0.2)] text-white rounded-md flex items-center gap-2 transition-all"
